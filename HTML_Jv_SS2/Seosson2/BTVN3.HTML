@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Sách Theo Thể Loại</title>
+</head>
+<body>
+
+<script>
+    let bookName = prompt("Nhập tên sách:");
+    let category = prompt("Nhập thể loại sách (Khoa học / Lịch sử / Văn học / Truyện):");
+    let bookStatus = prompt("Nhập tình trạng sách (co san / da muon):");
+
+    category = category.toLowerCase();
+    bookStatus = bookStatus.toLowerCase();
+
+    if (category === "khoa học" || category === "lich su") {
+
+        if (bookStatus === "co san") {
+
+            document.write("Sách này có sẵn trong thư viện");
+
+        } else if (bookStatus === "da muon") {
+
+            document.write("Sách đã được mượn");
+
+        } else {
+
+            document.write("Tình trạng sách không hợp lệ");
+
+        }
+
+    } else if (category === "van hoc" || category === "truyen") {
+
+        document.write("Sách này có thể đọc giải trí");
+
+    } else {
+
+        document.write("Thể loại sách không hợp lệ");
+
+    }
+</script>
+
+</body>
+</html>

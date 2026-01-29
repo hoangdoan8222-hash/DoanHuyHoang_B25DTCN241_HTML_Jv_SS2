@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Sách</title>
+</head>
+<body>
+
+<script>
+ 
+    let bookName = prompt("Nhập tên sách:");
+    let bookStatus = prompt("Nhập trạng thái sách (co san / da muon):");
+    let publishYear = Number(prompt("Nhập năm xuất bản:"));
+i
+    let currentYear = new Date().getFullYear();
+n
+    let bookAge = currentYear - publishYear;
+
+    bookStatus = bookStatus.toLowerCase();
+
+    if (bookStatus === "co san" && bookAge <= 5) {
+
+        document.write("Sách này mới và có sẵn để mượn");
+
+    } else if (bookStatus === "da muon" && bookAge <= 10) {
+
+        document.write("Sách này đã mượn nhưng khá mới, có thể mượn lại sau");
+
+    } else if (bookStatus === "da muon" && bookAge > 10) {
+
+        document.write("Sách này đã mượn và khá cũ");
+
+    } else if (bookStatus === "co san" && bookAge > 5) {
+
+        document.write("Sách này có sẵn nhưng đã lâu năm");
+
+    } else {
+
+        document.write("Thông tin không hợp lệ, vui lòng nhập lại");
+
+    }
+</script>
+
+</body>
+</html>

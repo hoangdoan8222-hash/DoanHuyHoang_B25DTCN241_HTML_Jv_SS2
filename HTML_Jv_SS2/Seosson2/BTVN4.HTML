@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Sách Mượn</title>
+</head>
+<body>
+
+<script>
+    let bookName = prompt("Nhập tên sách:");
+    let borrowerName = prompt("Nhập tên người mượn:");
+    let favoriteLevel = Number(prompt("Nhập mức độ yêu thích (1 đến 5):"));
+
+    if (favoriteLevel === 5 || favoriteLevel === 4) {
+
+        document.write("Đây là cuốn sách yêu thích của bạn, hãy đọc ngay!");
+
+    } else if (favoriteLevel === 3) {
+
+        document.write("Sách này khá ổn, có thể mượn");
+
+    } else if (favoriteLevel === 2 || favoriteLevel === 1) {
+
+        document.write("Sách này bạn có thể cân nhắc mượn lại sau");
+
+    } else {
+
+        document.write("Mức độ yêu thích không hợp lệ, vui lòng nhập từ 1 đến 5");
+
+    }
+</script>
+
+</body>
+</html>

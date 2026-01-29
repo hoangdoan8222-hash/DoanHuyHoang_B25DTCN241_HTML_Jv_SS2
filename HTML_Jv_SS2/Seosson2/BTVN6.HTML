@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Mượn Sách</title>
+</head>
+<body>
+
+<script>
+
+    let bookName = prompt("Nhập tên sách:");
+    let borrowerName = prompt("Nhập tên người mượn:");
+
+    let bookStatus = prompt("Nhập tình trạng sách (co san / da muon / khong co san):");
+    let borrowDays = Number(prompt("Nhập số ngày mượn:"));
+
+    let hasCard = prompt("Người mượn có thẻ thư viện không? (co / khong):");
+
+    bookStatus = bookStatus.toLowerCase();
+    hasCard = hasCard.toLowerCase();
+
+    if (bookStatus === "co san" && hasCard === "co") {
+
+        document.write("Chúc mừng, bạn có thể mượn sách này");
+
+    } else if (bookStatus === "da muon" && borrowDays < 30) {
+
+        if (hasCard === "co") {
+
+            document.write("Sách đang được mượn, vui lòng đợi đến khi trả lại");
+
+        } else {
+
+            document.write("Bạn không thể mượn sách nếu không có thẻ thư viện");
+
+        }
+
+    } else if (bookStatus === "khong co san") {
+
+        document.write("Sách này hiện tại không có sẵn trong thư viện, bạn có thể đăng ký mượn sau");
+
+    } else {
+
+        document.write("Thông tin không hợp lệ, vui lòng nhập lại");
+
+    }
+</script>
+
+</body>
+</html>

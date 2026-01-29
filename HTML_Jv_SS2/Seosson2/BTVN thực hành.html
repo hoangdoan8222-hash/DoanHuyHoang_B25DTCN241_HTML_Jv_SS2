@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let UserName = prompt("Nhập tên người dùng:");
+    let role = prompt("Nhập vai trò:");
+    let balance = +prompt("Nhập số dư tài khoản:");
+    let Cardstatus = prompt("Nhập trạng thái thư viện thẻ:");
+    let Latedays = +prompt("Nhập số ngày quá hạn trả sách:");
+
+    let cardStatus = (Cardstatus === "true");
+
+    let roleMessage = "";
+
+    switch(role){
+    case "admin":
+    roleMessage = "Chào Admin, bạn có toàn quyền hệ thống";
+    console.log(roleMessage);
+    break;
+
+    case "student":
+    roleMessage = "Chào sinh viên, bạn có thể mượn sách";
+    console.log(roleMessage);
+    break;
+
+    case "guest":
+    roleMessage = "Chào khách, bạn chỉ có thể đọc tại chỗ";
+    console.log(roleMessage);
+    break;
+
+    default:
+    roleMessage = "Lỗi: Vai trò không hợp lệ!";
+    console.log(roleMessage);
+    }
+
+    let borrow;
+
+    if( UserName && (role == "student"||role== "admin")&&(balance > 0 && cardStatus == true)) {
+    borrow = "ĐƯỢC PHÉP MƯỢN SÁCH";
+    console.log(borrow);
+    }else{
+    borrow = "YÊU CẦU BỊ TỪ CHỐI";
+    console.log(borrow);
+    }
+
+    let fine = 0;
+    let lateMessage = "";
+
+    if (Latedays <= 0) {
+    lateMessage = "Cảm ơn bạn đã trả đúng hạn";
+    }
+    else if (Latedays <= 5) {
+    fine = Latedays * 5000;
+    lateMessage = "Quá hạn " + Latedays + " ngày";
+    }
+    else if (Latedays <= 10) {
+    fine = Latedays * 10000;
+    lateMessage = "Quá hạn " + Latedays + " ngày";
+    }
+    else {
+    fine = 200000;
+    lateMessage = "Quá hạn " + Latedays + " ngày - TÀI KHOẢN BỊ KHÓA";
+    }
+
+    console.log(`
+    --- HỆ THỐNG MƯỢN TRẢ ---
+    Người dùng: ${UserName}
+    Quyền hạn: ${roleMessage}
+    Kết quả mượn: ${borrow}
+    Tình trạng trả sách: ${lateMessage}
+    Tiền phạt: ${fine} VNĐ
+`   );
+    
+
+    </script>
+
+</body>
+</html>

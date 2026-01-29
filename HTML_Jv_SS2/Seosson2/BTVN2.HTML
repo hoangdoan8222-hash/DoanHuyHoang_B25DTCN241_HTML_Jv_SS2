@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản Lý Số Lượng Sách</title>
+</head>
+<body>
+
+<script>
+    let bookCount = Number(prompt("Nhập số lượng sách trong thư viện:"));
+
+    if (bookCount < 10) {
+
+        document.write("Thư viện có ít sách");
+
+    } else if (bookCount >= 10 && bookCount <= 20) {
+
+        document.write("Thư viện có số lượng sách vừa đủ");
+
+    } else if (bookCount > 20) {
+
+        document.write("Thư viện có nhiều sách");
+
+    } else {
+
+        document.write("Dữ liệu không hợp lệ");
+
+    }
+</script>
+
+</body>
+</html>
